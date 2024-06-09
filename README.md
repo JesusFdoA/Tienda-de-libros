@@ -6,7 +6,7 @@ Sistema de ventas de libros
 - Carlos Andres Martines Suarez
 - Jesus Alejandro Treco Sanjuan
 
-#### Enlace al prototipo en figma: [Prototipo venta de libros](https://www.figma.com/design/BDVoJwOyEZjwt4Y6SgRKCF/Untitled?node-id=0-1&t=ypX5tJbE5yQyIGaZ-1)
+#### Enlace al prototipo en figma: [Prototipo venta de libros]([https://www.figma.com/design/BDVoJwOyEZjwt4Y6SgRKCF/Untitled?node-id=0-1&t=ypX5tJbE5yQyIGaZ-1](https://www.figma.com/proto/BDVoJwOyEZjwt4Y6SgRKCF/Untitled?node-id=1-2&scaling=scale-down&page-id=0%3A1&starting-point-node-id=1%3A2)
 
 
 ## Manual de usuario
