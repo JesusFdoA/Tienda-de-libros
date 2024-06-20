@@ -19,7 +19,7 @@
                <children>
                   <ImageView fitHeight="517.0" fitWidth="390.0" pickOnBounds="true">
                      <image>
-                        <Image url="@../../../../../../Downloads/Rectangle%202.png" />
+                        <Image url="@../img/login/Portada.png" />
                      </image>
                   </ImageView>
                </children>
