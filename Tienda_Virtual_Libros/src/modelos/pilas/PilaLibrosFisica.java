@@ -24,6 +24,7 @@ public class PilaLibrosFisica {
     
     public void restarLibro(int cantComprar){
         Libro libroAux = pilaLibros.peek();
+
         
        if(libroAux.getStock()>=cantComprar){
            int resta = libroAux.getStock()-cantComprar;
