@@ -4,10 +4,7 @@
  */
 package modelos;
 
-/**
- *
- * @author lagnu
- */
+
 public class Libro {
     private String nombre, editorial, formato, presentacion, autores, categoria;
     private long isbn;

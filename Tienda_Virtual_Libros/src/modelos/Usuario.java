@@ -4,13 +4,11 @@
  */
 package modelos;
 
-/**
- *
- * @author lagnu
- */
 public class Usuario {
+
     private String nombres, apellidos, correo, tipo_Documento, contraseña;
     private long numero_Documento;
+    private Usuario nodoUsuario;
 
     public Usuario() {
     }
@@ -22,6 +20,7 @@ public class Usuario {
         this.tipo_Documento = tipo_Documento;
         this.contraseña = contraseña;
         this.numero_Documento = numero_Documento;
+        nodoUsuario = null;
     }
 
     public String getNombres() {
@@ -71,5 +70,14 @@ public class Usuario {
     public void setNumero_Documento(long numero_Documento) {
         this.numero_Documento = numero_Documento;
     }
+
+    public Usuario getNodoUsuario() {
+        return nodoUsuario;
+    }
+
+    public void setNodoUsuario(Usuario nodoUsuario) {
+        this.nodoUsuario = nodoUsuario;
+    }
     
+
 }

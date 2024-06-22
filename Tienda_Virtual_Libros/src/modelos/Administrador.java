@@ -4,10 +4,7 @@
  */
 package modelos;
 
-/**
- *
- * @author lagnu
- */
+
 public class Administrador {
     private String correo, contraseña;
 
