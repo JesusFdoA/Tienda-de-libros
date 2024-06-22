@@ -8,17 +8,14 @@ import modelos.Administrador;
 import modelos.Libro;
 import modelos.Usuario;
 
-/**
- *
- * @author Juan Mangones
- */
+
 public class Utilidades {
 
     private static Utilidades instance;
     private Administrador administrador;
     private Usuario usuario;
     private Libro libro;
-
+    
     private Utilidades() {
       
     }
