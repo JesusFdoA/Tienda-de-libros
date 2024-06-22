@@ -14,11 +14,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
-/**
- * FXML Controller class
- *
- * @author Juan Mangones
- */
+
 public class RegistroController implements Initializable {
 
     @FXML

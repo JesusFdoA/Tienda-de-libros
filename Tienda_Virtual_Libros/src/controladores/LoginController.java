@@ -13,11 +13,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
-/**
- * FXML Controller class
- *
- * @author Juan Mangones
- */
+
 public class LoginController implements Initializable {
 
     @FXML
