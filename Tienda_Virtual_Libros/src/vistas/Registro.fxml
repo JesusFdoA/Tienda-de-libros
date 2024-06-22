@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="518.0" prefWidth="786.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.RegistroController">
+   <children>
+      <SplitPane dividerPositions="0.5" prefHeight="528.0" prefWidth="796.0">
+         <items>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="489.0" prefWidth="283.0">
+               <children>
+                  <ImageView fitHeight="528.0" fitWidth="394.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../img/Registro/PortadaRegistro.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="btnBack" fitHeight="31.0" fitWidth="43.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/Registro/back.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="40.0" layoutY="467.0" text="Registrate en nuestra libreria vitrual" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="439.0" prefWidth="339.0" style="-fx-background-color: #5CADF7;">
+               <children>
+                  <VBox alignment="CENTER" layoutX="58.0" layoutY="53.0" prefHeight="278.0" prefWidth="199.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <VBox prefHeight="313.0" prefWidth="394.0">
+                           <children>
+                              <Label text="Nombres:" textFill="WHITE">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="30.0" right="30.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="txtNombre">
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" left="30.0" right="30.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <Label text="Apellidos" textFill="WHITE">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="30.0" right="30.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="txtApellido">
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" left="30.0" right="30.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <Label text="Correo:" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="30.0" right="30.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="txtCorreo">
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" left="30.0" right="30.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <Label layoutX="40.0" layoutY="194.0" text="Tipo de documento:" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="30.0" right="30.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <ComboBox fx:id="comboDocumento" prefHeight="26.0" prefWidth="402.0" promptText="----------------">
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" left="30.0" right="30.0" />
+                                 </VBox.margin>
+                              </ComboBox>
+                              <Label layoutX="10.0" layoutY="111.0" text="Número documento:" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="30.0" right="30.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="txtUsuario11" layoutX="10.0" layoutY="128.0">
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" left="30.0" right="30.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <Label text="Contraseña" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="30.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </VBox>
+                        <PasswordField>
+                           <VBox.margin>
+                              <Insets bottom="20.0" left="30.0" right="30.0" />
+                           </VBox.margin>
+                        </PasswordField>
+                        <Button fx:id="btnRegistro" mnemonicParsing="false" onMouseEntered="#hacerHover" style="-fx-background-color: #30b956;" text="Registrar" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets bottom="8.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
