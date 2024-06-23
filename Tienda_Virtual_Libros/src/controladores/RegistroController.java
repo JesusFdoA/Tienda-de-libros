@@ -6,6 +6,8 @@ package controladores;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -13,7 +15,6 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-
 
 public class RegistroController implements Initializable {
 
@@ -26,7 +27,7 @@ public class RegistroController implements Initializable {
     @FXML
     private TextField txtCorreo;
     @FXML
-    private ComboBox<?> comboDocumento;
+    private ComboBox<String> comboDocumento;
     @FXML
     private TextField txtUsuario11;
     @FXML
@@ -38,10 +39,18 @@ public class RegistroController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+        ObservableList<String> opciones = FXCollections.observableArrayList(
+                "Opción 1", "Opción 2", "Opción 3"
+        );
+        comboDocumento.setItems(opciones);
+    }
 
     @FXML
     private void hacerHover(MouseEvent event) {
     }
-    
+
+    @FXML
+    private void registrarUsuario(MouseEvent event) {
+    }
+
 }

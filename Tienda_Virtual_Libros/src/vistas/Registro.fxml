@@ -125,7 +125,7 @@
                               <Insets bottom="20.0" left="30.0" right="30.0" />
                            </VBox.margin>
                         </PasswordField>
-                        <Button fx:id="btnRegistro" mnemonicParsing="false" onMouseEntered="#hacerHover" style="-fx-background-color: #30b956;" text="Registrar" textFill="WHITE">
+                        <Button fx:id="btnRegistro" mnemonicParsing="false" onMouseClicked="#registrarUsuario" onMouseEntered="#hacerHover" style="-fx-background-color: #30b956;" text="Registrar" textFill="WHITE">
                            <VBox.margin>
                               <Insets bottom="8.0" />
                            </VBox.margin>
