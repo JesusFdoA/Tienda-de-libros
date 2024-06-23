@@ -25,6 +25,8 @@ public class Main extends Application {
 
         try {
             ListaUsuarios listaUsuarios = new ListaUsuarios();
+            Usuario usuario = new Usuario();
+            Utilidades.getInstance().setUsuario(usuario);
             Utilidades.getInstance().setListaUsuarios(listaUsuarios);
             Parent root = FXMLLoader.load(getClass().getResource("/vistas/Login.fxml"));
             Scene scene = new Scene(root);
