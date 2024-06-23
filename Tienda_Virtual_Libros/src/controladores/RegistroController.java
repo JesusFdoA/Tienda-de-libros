@@ -4,6 +4,7 @@
  */
 package controladores;
 
+import Utils.Utilidades;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -42,6 +43,11 @@ public class RegistroController implements Initializable {
 
     @FXML
     private void hacerHover(MouseEvent event) {
+    }
+
+    @FXML
+    private void retorno_a_login(MouseEvent event) {
+        Utilidades.getInstance().mostrarOtraVista(event, "/vistas/Login.fxml");
     }
     
 }
