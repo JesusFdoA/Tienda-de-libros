@@ -17,8 +17,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1080.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/22" fx:controller="controladores.MenuPrincipalController">
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.MenuPrincipalController">
    <children>
       <BorderPane layoutX="-3.0" layoutY="-1.0" prefHeight="720.0" prefWidth="1080.0">
          <left>
@@ -42,7 +41,25 @@
                               <Insets bottom="10.0" />
                            </VBox.margin>
                         </ImageView>
-                        <Label text="Cliente">
+                        <Label fx:id="txtNombreUs" text="Cliente">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant />
+                                 </light>
+                              </Lighting>
+                           </effect>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="txtApellidos" text="Cliente">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -59,9 +76,47 @@
                         </Label>
                      </children>
                   </VBox>
-                  <VBox layoutX="-3.0" layoutY="239.0" prefHeight="410.0" prefWidth="208.0">
+                  <VBox alignment="CENTER" layoutX="-3.0" layoutY="239.0" prefHeight="410.0" prefWidth="208.0">
                      <children>
-                        <Label text="Label" />
+                        <Label fx:id="opcInicio" onMouseClicked="#mostrarLibros" text="Inicio" textAlignment="CENTER" textFill="#212a65">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin></Label>
+                        <Label fx:id="opcListaDes" layoutX="88.0" layoutY="190.0" onMouseClicked="#mostrarListaD" text="Lista de deseos" textAlignment="CENTER" textFill="#c2c2d1">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="opcCarrito" layoutX="88.0" layoutY="225.0" onMouseClicked="#mostrarCarrito" text="Carrito" textAlignment="CENTER" textFill="#c2c2d1">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="opCompras" onMouseClicked="#mostrarCompras" text="Compras" textAlignment="CENTER" textFill="#c2c2d1">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="opcSalir" onMouseClicked="#regresar" text="Salir" textAlignment="CENTER" textFill="#c2c2d1">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                        </Label>
                      </children>
                   </VBox>
                </children>
@@ -75,7 +130,7 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="722.0" prefWidth="678.0">
                      <children>
-                        <GridPane prefHeight="705.0" prefWidth="668.0">
+                        <GridPane gridLinesVisible="true" prefHeight="705.0" prefWidth="668.0" visible="false">
                           <columnConstraints>
                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -85,15 +140,10 @@
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
-                           <children>
-                              <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black;" />
-                              <Pane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="1" />
-                              <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <Pane layoutX="10.0" layoutY="250.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.rowIndex="1" />
-                              <Pane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.rowIndex="2" />
-                              <Pane layoutX="10.0" layoutY="491.0" prefHeight="200.0" prefWidth="244.0" style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                           </children>
                         </GridPane>
+                        <Pane fx:id="panelListDeseso" prefHeight="720.0" prefWidth="681.0" visible="false" />
+                        <Pane fx:id="panelCarrito" layoutX="-6.0" layoutY="4.0" prefHeight="726.0" prefWidth="698.0" />
+                        <Pane fx:id="panelCompras" layoutY="3.0" prefHeight="720.0" prefWidth="678.0" />
                      </children>
                   </AnchorPane>
               </content>
