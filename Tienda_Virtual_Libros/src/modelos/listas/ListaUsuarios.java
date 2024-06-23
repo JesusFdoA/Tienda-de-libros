@@ -19,10 +19,27 @@ public class ListaUsuarios {
         listUsuarios.add(usuario);
         System.out.println(""+usuario.getCorreo());
     }
+
+    public ArrayList<Usuario> getListUsuarios() {
+        return listUsuarios;
+    }
+
+    public void setListUsuarios(ArrayList<Usuario> listUsuarios) {
+        this.listUsuarios = listUsuarios;
+    }
+    
     
     public boolean existeUsuario(String correo, String contra){
         for (Usuario us : listUsuarios) {
             if(us.getCorreo().equals(correo)&&us.getPass().equals(contra)){
+                return true;
+            }
+        }
+        return false;
+    }
+    public boolean existeUsuario(String correo, long ID){
+        for (Usuario us : listUsuarios) {
+            if(us.getCorreo().equals(correo)|| us.getNumero_Documento() == ID){
                 return true;
             }
         }
