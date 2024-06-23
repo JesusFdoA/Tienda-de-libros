@@ -7,15 +7,19 @@ package controladores;
 import Utils.Utilidades;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import modelos.Usuario;
 
 public class RegistroController implements Initializable {
 
@@ -30,9 +34,11 @@ public class RegistroController implements Initializable {
     @FXML
     private ComboBox<String> comboDocumento;
     @FXML
-    private TextField txtUsuario11;
-    @FXML
     private Button btnRegistro;
+    @FXML
+    private TextField txtNDocumento;
+    @FXML
+    private PasswordField txtPass;
 
     /**
      * Initializes the controller class.
@@ -53,11 +59,40 @@ public class RegistroController implements Initializable {
     @FXML
 
     private void registrarUsuario(MouseEvent event) {
+        Utilidades.getInstance().getUsuario().setNombres(txtNombre.getText());
+        Utilidades.getInstance().getUsuario().setApellidos(txtApellido.getText());
+        Utilidades.getInstance().getUsuario().setCorreo(txtCorreo.getText());
+        Utilidades.getInstance().getUsuario().setTipo_Documento(comboDocumento.getValue());
+        Utilidades.getInstance().getUsuario().setNumero_Documento(Long.parseLong(txtNDocumento.getText()));
+        Utilidades.getInstance().getUsuario().setPass(txtPass.getText());
+        
+        Usuario aux = Utilidades.getInstance().getUsuario();
+        
+        if(Utilidades.getInstance().getListaUsuarios().existeUsuario(aux.getCorreo(), aux.getNumero_Documento()))
+        {
+            Platform.runLater(() -> {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setContentText("El usuario ya se encuentra registrado en el sistema");
+                alert.showAndWait();
+            });
+            
+        }
+        else{
+             Platform.runLater(() -> {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Felicitaciones");
+                alert.setContentText("El usuario ha sido registrado en el sistema");
+                alert.showAndWait();
+                
+            });
+             Utilidades.getInstance().getListaUsuarios().getListUsuarios().add(aux);
+        }
     }
 
-
+    @FXML
     private void retorno_a_login(MouseEvent event) {
         Utilidades.getInstance().mostrarOtraVista(event, "/vistas/Login.fxml");
     }
-    
+
 }
