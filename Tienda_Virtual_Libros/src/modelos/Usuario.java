@@ -6,7 +6,7 @@ package modelos;
 
 public class Usuario {
 
-    private String nombres, apellidos, correo, tipo_Documento, contraseña;
+    private String nombres, apellidos, correo, tipo_Documento, pass;
     private long numero_Documento;
     private Usuario nodoUsuario;
 
@@ -18,7 +18,7 @@ public class Usuario {
         this.apellidos = apellidos;
         this.correo = correo;
         this.tipo_Documento = tipo_Documento;
-        this.contraseña = contraseña;
+        this.pass = contraseña;
         this.numero_Documento = numero_Documento;
         nodoUsuario = null;
     }
@@ -55,12 +55,12 @@ public class Usuario {
         this.tipo_Documento = tipo_Documento;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getPass() {
+        return pass;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setPass(String pass) {
+        this.pass = pass;
     }
 
     public long getNumero_Documento() {

@@ -4,7 +4,7 @@
  */
 package modelos;
 
-import Utilidades.Utilidades;
+import Utils.Utilidades;
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -16,6 +16,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import modelos.listas.ListaUsuarios;
 
 public class Main extends Application {
 
@@ -23,6 +24,8 @@ public class Main extends Application {
     public void start(Stage stage) {
 
         try {
+            ListaUsuarios listaUsuarios = new ListaUsuarios();
+            Utilidades.getInstance().setListaUsuarios(listaUsuarios);
             Parent root = FXMLLoader.load(getClass().getResource("/vistas/Login.fxml"));
             Scene scene = new Scene(root);
             stage.setScene(scene);
