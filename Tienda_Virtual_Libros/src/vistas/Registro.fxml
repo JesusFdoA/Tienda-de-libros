@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="518.0" prefWidth="786.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.RegistroController">
+<AnchorPane id="AnchorPane" prefHeight="518.0" prefWidth="786.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.RegistroController">
    <children>
       <SplitPane dividerPositions="0.5" prefHeight="528.0" prefWidth="796.0">
          <items>
@@ -24,7 +24,7 @@
                         <Image url="@../img/Registro/PortadaRegistro.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="btnBack" fitHeight="31.0" fitWidth="43.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="btnBack" fitHeight="31.0" fitWidth="43.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#retorno_a_login" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../img/Registro/back.png" />
                      </image>
