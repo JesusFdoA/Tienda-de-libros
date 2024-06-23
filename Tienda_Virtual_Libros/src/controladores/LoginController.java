@@ -27,6 +27,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import modelos.Usuario;
 
 public class LoginController implements Initializable {
 
@@ -83,6 +84,8 @@ public class LoginController implements Initializable {
                 alert.setTitle("Credenciales correctas");
                 alert.setContentText("Perfecto, te has logeado correctamente");
                 alert.showAndWait();
+                Usuario usuarioLogeado = Utilidades.getInstance().getListaUsuarios().ObtenerUsuario(us, pass);
+                Utilidades.getInstance().setUsuario(usuarioLogeado);
                 Utilidades.getInstance().mostrarOtraVista(event, "/vistas/MenuPrincipal.fxml");
             });
         } else {
