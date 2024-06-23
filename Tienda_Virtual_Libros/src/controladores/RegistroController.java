@@ -47,7 +47,7 @@ public class RegistroController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         ObservableList<String> opciones = FXCollections.observableArrayList(
-                "Opción 1", "Opción 2", "Opción 3"
+                "Cedula", "Pasaporte", "Cedula de extranjeria"
         );
         comboDocumento.setItems(opciones);
     }
@@ -76,7 +76,7 @@ public class RegistroController implements Initializable {
                 alert.setContentText("El usuario ya se encuentra registrado en el sistema");
                 alert.showAndWait();
             });
-            
+            limpiarCajas();
         }
         else{
              Platform.runLater(() -> {
@@ -87,6 +87,7 @@ public class RegistroController implements Initializable {
                 
             });
              Utilidades.getInstance().getListaUsuarios().getListUsuarios().add(aux);
+             limpiarCajas();
         }
     }
 
@@ -94,5 +95,12 @@ public class RegistroController implements Initializable {
     private void retorno_a_login(MouseEvent event) {
         Utilidades.getInstance().mostrarOtraVista(event, "/vistas/Login.fxml");
     }
-
+    
+    public void limpiarCajas(){
+        txtApellido.setText("");
+        txtCorreo.setText("");
+        txtNDocumento.setText("");
+        txtNombre.setText("");
+        txtPass.setText("");
+    }
 }
