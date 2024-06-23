@@ -4,6 +4,7 @@
  */
 package controladores;
 
+import Utils.Utilidades;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -50,7 +51,13 @@ public class RegistroController implements Initializable {
     }
 
     @FXML
+
     private void registrarUsuario(MouseEvent event) {
     }
 
+
+    private void retorno_a_login(MouseEvent event) {
+        Utilidades.getInstance().mostrarOtraVista(event, "/vistas/Login.fxml");
+    }
+    
 }
