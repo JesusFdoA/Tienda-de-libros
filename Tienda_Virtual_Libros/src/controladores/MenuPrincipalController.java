@@ -73,7 +73,7 @@ public class MenuPrincipalController implements Initializable {
         s3.setStyle("-fx-text-fill: #c2c2d1;");
         s4.setStyle("-fx-text-fill: #c2c2d1;");
     }
-
+    
     private List cargarLibrosIniciales() {
         libros.clear();
         libros.add(new Libro("Programacion 1", "Anonimo", 150000));
