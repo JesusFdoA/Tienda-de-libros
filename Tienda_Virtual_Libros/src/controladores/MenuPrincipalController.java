@@ -11,6 +11,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 import modelos.Usuario;
 
 public class MenuPrincipalController implements Initializable {
@@ -29,6 +31,14 @@ public class MenuPrincipalController implements Initializable {
     private Label opcSalir;
     @FXML
     private Label txtApellidos;
+    @FXML
+    private GridPane panelPrincipal;
+    @FXML
+    private Pane panelListDeseso;
+    @FXML
+    private Pane panelCarrito;
+    @FXML
+    private Pane panelCompras;
 
     /**
      * Initializes the controller class.
@@ -54,21 +64,38 @@ public class MenuPrincipalController implements Initializable {
     @FXML
     private void mostrarLibros(MouseEvent event) {
         CambiarColor1(opcInicio, opcSalir, opCompras, opcCarrito, opcListaDes);
+        panelListDeseso.setVisible(false);
+        panelCarrito.setVisible(false);
+        panelPrincipal.setVisible(true);
+        panelCompras.setVisible(false);
     }
 
     @FXML
     private void mostrarListaD(MouseEvent event) {
         CambiarColor1(opcListaDes, opcInicio, opcSalir, opCompras, opcCarrito);
+        panelListDeseso.setVisible(true);
+        panelCarrito.setVisible(false);
+        panelPrincipal.setVisible(false);
+        panelCompras.setVisible(false);
+
     }
 
     @FXML
     private void mostrarCarrito(MouseEvent event) {
         CambiarColor1(opcCarrito, opcListaDes, opcInicio, opcSalir, opCompras);
+        panelListDeseso.setVisible(false);
+        panelCarrito.setVisible(true);
+        panelPrincipal.setVisible(false);
+        panelCompras.setVisible(false);
     }
 
     @FXML
     private void mostrarCompras(MouseEvent event) {
-        CambiarColor1(opCompras,opcCarrito, opcListaDes, opcInicio, opcSalir);
+        CambiarColor1(opCompras, opcCarrito, opcListaDes, opcInicio, opcSalir);
+        panelListDeseso.setVisible(false);
+        panelCarrito.setVisible(false);
+        panelPrincipal.setVisible(false);
+        panelCompras.setVisible(true);
     }
 
     @FXML
