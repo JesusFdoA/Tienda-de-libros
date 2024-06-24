@@ -6,21 +6,30 @@ package controladores;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+import modelos.Libro;
 
 /**
  * FXML Controller class
  *
  * @author Juan Mangones
  */
-public class Item_libroController implements Initializable {
+public class Item_libroController  {
 
-    /**
-     * Initializes the controller class.
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+    @FXML
+    private Label txtTitulo;
+    @FXML
+    private Label txtAutor;
+    @FXML
+    private Label txtPrecio;
+    
+    public void setLibro(Libro libro){
+        txtAutor.setText(libro.getAutores());
+        txtPrecio.setText(""+libro.getPrecio());
+        txtTitulo.setText(libro.getNombre());
+    }
+    
     
 }
