@@ -75,8 +75,10 @@ public class RegistroController implements Initializable {
                 alert.setTitle("Error");
                 alert.setContentText("El usuario ya se encuentra registrado en el sistema");
                 alert.showAndWait();
+                
             });
             limpiarCajas();
+            
         }
         else{
              Platform.runLater(() -> {
@@ -84,6 +86,7 @@ public class RegistroController implements Initializable {
                 alert.setTitle("Felicitaciones");
                 alert.setContentText("El usuario ha sido registrado en el sistema");
                 alert.showAndWait();
+                Utilidades.getInstance().mostrarOtraVista(event, "/vistas/Login.fxml");
                 
             });
              Utilidades.getInstance().getListaUsuarios().getListUsuarios().add(aux);
