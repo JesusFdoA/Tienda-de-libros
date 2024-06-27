@@ -10,10 +10,16 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -46,8 +52,53 @@ public class MenuPrincipalController implements Initializable {
     private Pane panelCarrito;
     @FXML
     private Pane panelCompras;
-
+    //Configuracion de la tabla deseo
     private List<Libro> libros = new ArrayList<>();
+    @FXML
+    private TableView<Libro> tableDeseo;
+    @FXML
+    private TableColumn colNombreDeseo;
+    @FXML
+    private TableColumn colPrecioDeseo;
+
+    //Configuracion de la tabla carrito
+    @FXML
+    private TableView tableCar;
+    @FXML
+    private TableColumn colISBNCar;
+    @FXML
+    private TableColumn colNombreCar;
+    @FXML
+    private TableColumn colCantidadCar;
+    @FXML
+    private TableColumn colUnitCar;
+    @FXML
+    private TableColumn colTotalCar;
+
+    private ObservableList<Libro> Listlibros;
+
+    @FXML
+    private Button btnBuyCar;
+    @FXML
+    private Button BTNDelCar;
+    @FXML
+    private TableView<?> tableBuy;
+    @FXML
+    private TableColumn<?, ?> colISBNBuy;
+    @FXML
+    private TableColumn<?, ?> colNameBuy;
+    @FXML
+    private TableColumn<?, ?> colCantBuy;
+    @FXML
+    private TableColumn<?, ?> colValBuy;
+    @FXML
+    private TableColumn<?, ?> colTalBuy;
+    @FXML
+    private Label txtPrecioBuy;
+    @FXML
+    private Button btnPagar;
+    @FXML
+    private Button btnCancelar;
 
     /**
      * Initializes the controller class.
@@ -55,12 +106,26 @@ public class MenuPrincipalController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        CapturarUsuario();
+        actualizarGridPane();
+        ConfigurarTablaCarrito();
+
+    }
+
+    public void CapturarUsuario() {
         Usuario usuarioLog = Utilidades.getInstance().getUsuario();
         txtNombreUs.setText(usuarioLog.getNombres());
         txtApellidos.setText(usuarioLog.getApellidos());
         panelPrincipal.setHgap(10); // Espacio horizontal entre columnas
         panelPrincipal.setVgap(50); // Espacio vertical entre filas
-        actualizarGridPane();
+    }
+
+    public void ConfigurarTablaCarrito() {
+        Listlibros = FXCollections.observableArrayList();
+        this.tableDeseo.setItems(Listlibros);
+
+        this.colNombreDeseo.setCellValueFactory(new PropertyValueFactory("nombre"));
+        this.colPrecioDeseo.setCellValueFactory(new PropertyValueFactory("precio"));
 
     }
 
@@ -73,7 +138,7 @@ public class MenuPrincipalController implements Initializable {
         s3.setStyle("-fx-text-fill: #c2c2d1;");
         s4.setStyle("-fx-text-fill: #c2c2d1;");
     }
-    
+
     private List cargarLibrosIniciales() {
         libros.clear();
         libros.add(new Libro("Programacion 1", "Anonimo", 150000));
@@ -81,41 +146,41 @@ public class MenuPrincipalController implements Initializable {
         libros.add(new Libro("Programacion 3", "Anonimo", 190000));
         libros.add(new Libro("Programacion 4", "Anonimo", 190000));
         libros.add(new Libro("Programacion 5", "Anonimo", 190000));
-        libros.add(new Libro("Programacion 6", "Anonimo", 190000));
+        
         return libros;
 
     }
     
+
     public void actualizarGridPane() {
-    List<Libro> libros = cargarLibrosIniciales(); // Supongamos que tienes una lista de libros
+        List<Libro> libros = cargarLibrosIniciales();
 
-    panelPrincipal.getChildren().clear(); // Limpia el GridPane antes de agregar nuevos elementos
+        panelPrincipal.getChildren().clear(); // Limpia el GridPane antes de agregar nuevos elementos
 
-    int column = 0;
-    int row = 0;
+        int column = 0;
+        int row = 0;
 
-    for (int i = 0; i < libros.size(); i++) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("/vistas/item_libro.fxml"));
-            HBox itemLibro = fxmlLoader.load();
+        for (int i = 0; i < libros.size(); i++) {
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setLocation(getClass().getResource("/vistas/item_libro.fxml"));
+                HBox itemLibro = fxmlLoader.load();
 
-            Item_libroController itemLibroController = fxmlLoader.getController();
-            itemLibroController.setDatosLibro(libros.get(i)); // Asigna los datos del libro al controlador del item
+                Item_libroController itemLibroController = fxmlLoader.getController();
+                itemLibroController.setDatosLibro(libros.get(i)); // Asigna los datos del libro al controlador del item
 
-            panelPrincipal.add(itemLibro, column, row);
+                panelPrincipal.add(itemLibro, column, row);
 
-            column++;
-            if (column == 2) {
-                column = 0;
-                row++;
+                column++;
+                if (column == 2) {
+                    column = 0;
+                    row++;
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-        } catch (IOException e) {
-            e.printStackTrace();
         }
     }
-}
-
 
     public void agregarLibro(Libro libro) {
         libros.add(libro);
