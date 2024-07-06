@@ -52,7 +52,6 @@ public class Utilidades {
     
 
     public static Utilidades getInstance() {
-      
         if (instance == null) {
             instance = new Utilidades();
         }
