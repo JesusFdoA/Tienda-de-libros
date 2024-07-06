@@ -48,9 +48,6 @@ public class Utilidades {
         this.pilaLibrosMatematica = pilaLibrosMatematica;
     }
 
-    
-    
-
     public static Utilidades getInstance() {
         if (instance == null) {
             instance = new Utilidades();
