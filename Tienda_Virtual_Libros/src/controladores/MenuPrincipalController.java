@@ -145,8 +145,7 @@ public class MenuPrincipalController implements Initializable {
         libros.add(new Libro("Programacion 2", "Anonimo", 200000));
         libros.add(new Libro("Programacion 3", "Anonimo", 190000));
         libros.add(new Libro("Programacion 4", "Anonimo", 190000));
-        libros.add(new Libro("Programacion 5", "Anonimo", 190000));
-        
+       
         return libros;
 
     }
