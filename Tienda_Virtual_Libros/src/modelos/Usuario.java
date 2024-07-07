@@ -4,13 +4,30 @@
  */
 package modelos;
 
+import modelos.listas.ListaDeCarrito;
+import modelos.listas.ListaDeDeseos;
+
 public class Usuario {
 
     private String nombres, apellidos, correo, tipo_Documento, pass;
     private long numero_Documento;
     private Usuario nodoUsuario;
+    private ListaDeDeseos listaDeDeseos;
+    private ListaDeCarrito listaDeCarrito;
 
     public Usuario() {
+    }
+
+    public Usuario(String nombres, String apellidos, String correo, String tipo_Documento, String pass, long numero_Documento, Usuario nodoUsuario, ListaDeDeseos listaDeDeseos, ListaDeCarrito listaDeCarrito) {
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+        this.correo = correo;
+        this.tipo_Documento = tipo_Documento;
+        this.pass = pass;
+        this.numero_Documento = numero_Documento;
+        this.nodoUsuario = nodoUsuario;
+        this.listaDeDeseos = listaDeDeseos;
+        this.listaDeCarrito = listaDeCarrito;
     }
 
     public Usuario(String nombres, String apellidos, String correo, String tipo_Documento, String contraseña, long numero_Documento) {
@@ -21,6 +38,22 @@ public class Usuario {
         this.pass = contraseña;
         this.numero_Documento = numero_Documento;
         nodoUsuario = null;
+    }
+
+    public ListaDeDeseos getListaDeDeseos() {
+        return listaDeDeseos;
+    }
+
+    public void setListaDeDeseos(ListaDeDeseos listaDeDeseos) {
+        this.listaDeDeseos = listaDeDeseos;
+    }
+
+    public ListaDeCarrito getListaDeCarrito() {
+        return listaDeCarrito;
+    }
+
+    public void setListaDeCarrito(ListaDeCarrito listaDeCarrito) {
+        this.listaDeCarrito = listaDeCarrito;
     }
 
     public String getNombres() {
@@ -78,6 +111,5 @@ public class Usuario {
     public void setNodoUsuario(Usuario nodoUsuario) {
         this.nodoUsuario = nodoUsuario;
     }
-    
 
 }
