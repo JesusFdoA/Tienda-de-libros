@@ -21,6 +21,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -31,6 +32,7 @@ import modelos.Usuario;
 
 public class MenuPrincipalController implements Initializable {
 
+    private Usuario usuario;
     @FXML
     private Label txtNombreUs;
     @FXML
@@ -101,6 +103,26 @@ public class MenuPrincipalController implements Initializable {
     private Button btnPagar;
     @FXML
     private Button btnCancelar;
+    @FXML
+    private ImageView imgLibro;
+    @FXML
+    private Label txtNombre;
+    @FXML
+    private Label txtEditorial;
+    @FXML
+    private Label txtFormato;
+    @FXML
+    private Label txtPresentacion;
+    @FXML
+    private Label txtIsbn;
+    @FXML
+    private Label txtCategoria;
+    @FXML
+    private Label txtStock;
+    @FXML
+    private Button btnCarrito;
+    @FXML
+    private Button btnDeseos;
 
     /**
      * Initializes the controller class.
@@ -108,10 +130,18 @@ public class MenuPrincipalController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        this.usuario = Utilidades.getInstance().getUsuario();
 
-        //  ConfigurarTablaCarrito();
         configurarTablaDeseos();
 
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
     public void CapturarUsuario() {
