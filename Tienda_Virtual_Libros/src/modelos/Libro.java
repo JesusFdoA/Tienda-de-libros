@@ -31,8 +31,6 @@ public class Libro {
         this.autores = autores;
         this.precio = precio;
     }
-    
-    
 
     public String getNombre() {
         return nombre;
@@ -105,6 +103,10 @@ public class Libro {
     public void setStock(int stock) {
         this.stock = stock;
     }
+    
+    
+
+   
     
     
 }
