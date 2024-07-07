@@ -31,7 +31,7 @@ import modelos.Libro;
 import modelos.Usuario;
 
 public class MenuPrincipalController implements Initializable {
-
+    
     private Usuario usuario;
     @FXML
     private Label txtNombreUs;
@@ -61,13 +61,14 @@ public class MenuPrincipalController implements Initializable {
     private TableView<Libro> tableDeseo;
     @FXML
     private TableColumn<Libro, String> colNombreDeseo;
-
+    
     @FXML
     private TableColumn<Libro, Double> colPrecioDeseo;
 
     //Configuracion de la tabla carrito
+    private ObservableList<Libro> listaLibroCarrito;
     @FXML
-    private TableView tableCar;
+    private TableView<Libro> tableCar;
     @FXML
     private TableColumn colISBNCar;
     @FXML
@@ -78,9 +79,9 @@ public class MenuPrincipalController implements Initializable {
     private TableColumn colUnitCar;
     @FXML
     private TableColumn colTotalCar;
-
+    
     private ObservableList<Libro> Listlibros;
-
+    
     @FXML
     private Button btnBuyCar;
     @FXML
@@ -131,19 +132,19 @@ public class MenuPrincipalController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         this.usuario = Utilidades.getInstance().getUsuario();
-
+        
         configurarTablaDeseos();
-
+        
     }
-
+    
     public Usuario getUsuario() {
         return usuario;
     }
-
+    
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
-
+    
     public void CapturarUsuario() {
         Usuario usuarioLog = Utilidades.getInstance().getUsuario();
         txtNombreUs.setText(usuarioLog.getNombres());
@@ -151,7 +152,7 @@ public class MenuPrincipalController implements Initializable {
         panelPrincipal.setHgap(10); // Espacio horizontal entre columnas
         panelPrincipal.setVgap(50); // Espacio vertical entre filas
     }
-
+    
     public void configurarTablaDeseos() {
         try {
 
@@ -172,12 +173,39 @@ public class MenuPrincipalController implements Initializable {
             alert.setTitle("Error");
             alert.setHeaderText("Error al cargar la tabla");
             alert.setContentText("Este es un cuadro de diálogo de alerta en JavaFX.");
-
+            
             alert.showAndWait();
         }
-
     }
+    
+    public void configurarTablaCarrito() {
+        try {
 
+            // Inicializar la lista observable
+            listaLibroCarrito = FXCollections.observableArrayList();
+
+            // Obtener la lista de deseos desde Utilidades
+            listaLibroCarrito.addAll(Utilidades.getInstance().getListaDeDeseos().getListDeseos());
+
+            // Configurar las columnas
+            colNombreCar.setCellValueFactory(new PropertyValueFactory<>("nombre"));
+            colISBNCar.setCellValueFactory(new PropertyValueFactory<>("isbn"));
+            colCantidadCar.setCellValueFactory(new PropertyValueFactory<>("stock"));
+            colUnitCar.setCellValueFactory(new PropertyValueFactory<>("precio"));
+            colTotalCar.setCellValueFactory(new PropertyValueFactory<>("total"));
+            
+            // Establecer los datos en la tabla
+            tableDeseo.setItems(listLibroDeseos);
+        } catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Error al cargar la tabla");
+            alert.setContentText("Este es un cuadro de diálogo de alerta en JavaFX.");
+            
+            alert.showAndWait();
+        }
+    }
+    
     public void CambiarColor1(Label principal, Label s1,
             Label s2, Label s3,
             Label s4) {
@@ -187,7 +215,7 @@ public class MenuPrincipalController implements Initializable {
         s3.setStyle("-fx-text-fill: #c2c2d1;");
         s4.setStyle("-fx-text-fill: #c2c2d1;");
     }
-
+    
     @FXML
     private void mostrarLibros(MouseEvent event) {
         CambiarColor1(opcInicio, opcSalir, opCompras, opcCarrito, opcListaDes);
@@ -196,7 +224,7 @@ public class MenuPrincipalController implements Initializable {
         panelPrincipal.setVisible(true);
         panelCompras.setVisible(false);
     }
-
+    
     @FXML
     private void mostrarListaD(MouseEvent event) {
         CambiarColor1(opcListaDes, opcInicio, opcSalir, opCompras, opcCarrito);
@@ -204,9 +232,9 @@ public class MenuPrincipalController implements Initializable {
         panelCarrito.setVisible(false);
         panelPrincipal.setVisible(false);
         panelCompras.setVisible(false);
-
+        
     }
-
+    
     @FXML
     private void mostrarCarrito(MouseEvent event) {
         CambiarColor1(opcCarrito, opcListaDes, opcInicio, opcSalir, opCompras);
@@ -215,7 +243,7 @@ public class MenuPrincipalController implements Initializable {
         panelPrincipal.setVisible(false);
         panelCompras.setVisible(false);
     }
-
+    
     @FXML
     private void mostrarCompras(MouseEvent event) {
         CambiarColor1(opCompras, opcCarrito, opcListaDes, opcInicio, opcSalir);
@@ -224,7 +252,7 @@ public class MenuPrincipalController implements Initializable {
         panelPrincipal.setVisible(false);
         panelCompras.setVisible(true);
     }
-
+    
     @FXML
     private void regresar(MouseEvent event) {
         Utilidades.getInstance().mostrarOtraVista(event, "/vistas/Login.fxml");
