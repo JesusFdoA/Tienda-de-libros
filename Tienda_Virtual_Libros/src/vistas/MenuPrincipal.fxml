@@ -21,9 +21,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="849.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.MenuPrincipalController">
+<AnchorPane id="AnchorPane" prefHeight="849.0" prefWidth="1217.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.MenuPrincipalController">
    <children>
-      <BorderPane layoutX="-3.0" layoutY="-1.0" prefHeight="850.0" prefWidth="1126.0">
+      <BorderPane layoutX="-3.0" layoutY="-1.0" prefHeight="850.0" prefWidth="1217.0">
          <left>
             <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black; -fx-background-color: #f1f1fb;" BorderPane.alignment="CENTER">
                <children>
@@ -127,7 +127,77 @@
             </Pane>
          </left>
          <right>
-            <Pane prefHeight="849.0" prefWidth="235.0" style="-fx-background-color: #f9f8fd; -fx-border-color: black;" BorderPane.alignment="CENTER" />
+            <Pane prefHeight="850.0" prefWidth="334.0" style="-fx-background-color: #f9f8fd; -fx-border-color: black;" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fx:id="imgLibro" fitHeight="248.0" fitWidth="212.0" layoutX="86.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/menuPrincipal/libros/libro.jpg" />
+                     </image>
+                  </ImageView>
+                  <VBox alignment="TOP_CENTER" layoutX="4.0" layoutY="325.0" prefHeight="523.0" prefWidth="329.0">
+                     <padding>
+                        <Insets left="3.0" right="3.0" />
+                     </padding>
+                     <children>
+                        <Label fx:id="txtNombre" styleClass="labelsDetalles" stylesheets="@../Utils/EstilosMenuPrincipal.css" text="Nombre" />
+                        <HBox alignment="CENTER" prefHeight="281.0" prefWidth="323.0">
+                           <children>
+                              <VBox alignment="CENTER_RIGHT" prefHeight="200.0" prefWidth="161.5">
+                                 <children>
+                                    <Label styleClass="labelsDetalles" stylesheets="@../Utils/EstilosMenuPrincipal.css" text="Editorial:" />
+                                    <Label layoutX="92.0" layoutY="10.0" styleClass="labelsDetalles" stylesheets="@../Utils/EstilosMenuPrincipal.css" text="Formato:" />
+                                    <Label layoutX="92.0" layoutY="28.0" styleClass="labelsDetalles" stylesheets="@../Utils/EstilosMenuPrincipal.css" text="Presentacion:" />
+                                    <Label layoutX="92.0" layoutY="10.0" styleClass="labelsDetalles" stylesheets="@../Utils/EstilosMenuPrincipal.css" text="ISBN:" />
+                                    <Label layoutX="92.0" layoutY="63.0" styleClass="labelsDetalles" stylesheets="@../Utils/EstilosMenuPrincipal.css" text="Categoria:" />
+                                    <Label layoutX="53.0" layoutY="116.0" styleClass="labelsDetalles" stylesheets="@../Utils/EstilosMenuPrincipal.css" text="Stock:" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="161.5">
+                                 <children>
+                                    <Label fx:id="txtEditorial" styleClass="labelsDetalles" stylesheets="@../Utils/EstilosMenuPrincipal.css" text="Label" />
+                                    <Label fx:id="txtFormato" layoutX="92.0" layoutY="10.0" styleClass="labelsDetalles" stylesheets="@../Utils/EstilosMenuPrincipal.css" text="Label" />
+                                    <Label fx:id="txtPresentacion" layoutX="92.0" layoutY="28.0" styleClass="labelsDetalles" stylesheets="@../Utils/EstilosMenuPrincipal.css" text="Label" />
+                                    <Label fx:id="txtIsbn" layoutX="92.0" layoutY="10.0" styleClass="labelsDetalles" stylesheets="@../Utils/EstilosMenuPrincipal.css" text="Label" />
+                                    <Label fx:id="txtCategoria" layoutX="92.0" layoutY="63.0" styleClass="labelsDetalles" stylesheets="@../Utils/EstilosMenuPrincipal.css" text="Label" />
+                                    <Label fx:id="txtStock" layoutX="10.0" layoutY="116.0" styleClass="labelsDetalles" stylesheets="@../Utils/EstilosMenuPrincipal.css" text="Label" />
+                                 </children>
+                              </VBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="15.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="26.0" prefWidth="323.0">
+                           <children>
+                              <Label text="Anadir al carrito:">
+                                 <HBox.margin>
+                                    <Insets right="50.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Label layoutX="10.0" layoutY="10.0" text="Anadir lista de deseos:">
+                                 <HBox.margin>
+                                    <Insets left="50.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="36.0" prefWidth="323.0">
+                           <children>
+                              <Button fx:id="btnCarrito" mnemonicParsing="false" text="Carrito">
+                                 <HBox.margin>
+                                    <Insets right="80.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button fx:id="btnDeseos" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Deseos">
+                                 <HBox.margin>
+                                    <Insets left="80.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children></Pane>
          </right>
          <center>
             <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
@@ -344,7 +414,7 @@
                               </Pane>
                            </children>
                         </GridPane>
-                        <Pane fx:id="panelListDeseso" prefHeight="720.0" prefWidth="681.0">
+                        <Pane fx:id="panelListDeseso" prefHeight="720.0" prefWidth="681.0" visible="false">
                            <children>
                               <VBox layoutX="6.0" layoutY="22.0" prefHeight="490.0" prefWidth="661.0">
                                  <children>
