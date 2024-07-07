@@ -344,7 +344,7 @@
                               </Pane>
                            </children>
                         </GridPane>
-                        <Pane fx:id="panelListDeseso" prefHeight="720.0" prefWidth="681.0" visible="false">
+                        <Pane fx:id="panelListDeseso" prefHeight="720.0" prefWidth="681.0">
                            <children>
                               <VBox layoutX="6.0" layoutY="22.0" prefHeight="490.0" prefWidth="661.0">
                                  <children>
