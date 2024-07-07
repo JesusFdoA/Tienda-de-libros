@@ -19,6 +19,7 @@ import modelos.Administrador;
 import modelos.Libro;
 import modelos.Usuario;
 import modelos.listas.ListaDeDeseos;
+import modelos.listas.ListaLibrosBiblioteca;
 import modelos.listas.ListaUsuarios;
 import modelos.pilas.PilaLibrosFisica;
 import modelos.pilas.PilaLibrosIngenieria;
@@ -33,6 +34,7 @@ public class Utilidades {
     private Libro libro;
     private ListaUsuarios listaUsuarios;
     private ListaDeDeseos listaDeDeseos;
+    private ListaLibrosBiblioteca listaLibrosBiblioteca;
     private PilaLibrosFisica pilaLibrosFisica;
     private PilaLibrosIngenieria pilaLibrosIngenieria;
     private PilaLibrosMatematica pilaLibrosMatematica;
