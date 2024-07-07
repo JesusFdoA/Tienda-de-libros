@@ -15,6 +15,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -53,13 +54,14 @@ public class MenuPrincipalController implements Initializable {
     @FXML
     private Pane panelCompras;
     //Configuracion de la tabla deseo
-    private ObservableList<Libro> listLibroDesos;
+    private ObservableList<Libro> listLibroDeseos;
     @FXML
     private TableView<Libro> tableDeseo;
     @FXML
-    private TableColumn colNombreDeseo;
+    private TableColumn<Libro, String> colNombreDeseo;
+
     @FXML
-    private TableColumn colPrecioDeseo;
+    private TableColumn<Libro, Double> colPrecioDeseo;
 
     //Configuracion de la tabla carrito
     @FXML
@@ -106,9 +108,9 @@ public class MenuPrincipalController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        CapturarUsuario();
-        // actualizarGridPane();
-        ConfigurarTablaCarrito();
+
+        //  ConfigurarTablaCarrito();
+        configurarTablaDeseos();
 
     }
 
@@ -121,19 +123,28 @@ public class MenuPrincipalController implements Initializable {
     }
 
     public void configurarTablaDeseos() {
-        listLibroDesos = FXCollections.observableArrayList();
+        try {
 
-        this.colNombreDeseo.setCellValueFactory(new PropertyValueFactory("nombre"));
-        this.colPrecioDeseo.setCellValueFactory(new PropertyValueFactory("precio"));
-        
-    }
+            // Inicializar la lista observable
+            listLibroDeseos = FXCollections.observableArrayList();
 
-    public void ConfigurarTablaCarrito() {
-        Listlibros = FXCollections.observableArrayList();
-        this.tableDeseo.setItems(Listlibros);
+            // Obtener la lista de deseos desde Utilidades
+            listLibroDeseos.addAll(Utilidades.getInstance().getListaDeDeseos().getListDeseos());
 
-        this.colNombreDeseo.setCellValueFactory(new PropertyValueFactory("nombre"));
-        this.colPrecioDeseo.setCellValueFactory(new PropertyValueFactory("precio"));
+            // Configurar las columnas
+            colNombreDeseo.setCellValueFactory(new PropertyValueFactory<>("nombre"));
+            colPrecioDeseo.setCellValueFactory(new PropertyValueFactory<>("precio"));
+
+            // Establecer los datos en la tabla
+            tableDeseo.setItems(listLibroDeseos);
+        } catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Error al cargar la tabla");
+            alert.setContentText("Este es un cuadro de diálogo de alerta en JavaFX.");
+
+            alert.showAndWait();
+        }
 
     }
 
