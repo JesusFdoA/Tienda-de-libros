@@ -4,9 +4,11 @@
  */
 package controladores;
 
+import Utils.Utilidades;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 
 /**
  * FXML Controller class
@@ -21,6 +23,10 @@ public class VistaAdminController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+         Utilidades.getInstance().mostrarAlert(
+                    Alert.AlertType.INFORMATION,
+                    "Credenciales correctas",
+                    "Bienvenido Admin");
     }    
     
 }
