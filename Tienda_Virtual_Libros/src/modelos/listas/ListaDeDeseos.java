@@ -13,13 +13,6 @@ public class ListaDeDeseos {
 
     public ListaDeDeseos() {
         listDeseos = new ArrayList<>();
-        Libro l = new  Libro("prueba", "editorial la prueba",
-                "Libro", "Tapa dura", "el pepe",
-                "no se", 432432432, 130000, 6);
-        listDeseos.add(l);
-        for (Libro listDeseo : listDeseos) {
-            System.out.println(""+listDeseo.getNombre());
-        }
     }
 
     public ArrayList<Libro> getListDeseos() {
