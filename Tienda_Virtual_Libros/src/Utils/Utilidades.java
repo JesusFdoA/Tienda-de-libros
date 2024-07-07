@@ -12,6 +12,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import modelos.Administrador;
@@ -141,5 +142,12 @@ public class Utilidades {
         } catch (IOException ex) {
             Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    
+     public void mostrarAlert(Alert.AlertType alertType,String titulo,String contenido ){
+         Alert alert = new Alert(alertType);
+                alert.setTitle(titulo);
+                alert.setContentText(contenido);
+                alert.showAndWait();
     }
 }
