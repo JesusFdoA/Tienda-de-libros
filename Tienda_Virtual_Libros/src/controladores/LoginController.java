@@ -93,6 +93,7 @@ public class LoginController implements Initializable {
                 alert.showAndWait();
                 Usuario usuarioLogeado = Utilidades.getInstance().getListaUsuarios().ObtenerUsuario(us, pass);
                 Utilidades.getInstance().setUsuario(usuarioLogeado);
+                Utilidades.getInstance().setUsuario(Utilidades.getInstance().getListaUsuarios().ObtenerUsuario(us, pass));
                 Utilidades.getInstance().mostrarOtraVista(event, "/vistas/MenuPrincipal.fxml");
             });
         } else {
