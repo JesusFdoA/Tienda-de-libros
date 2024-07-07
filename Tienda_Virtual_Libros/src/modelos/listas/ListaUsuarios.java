@@ -17,7 +17,6 @@ public class ListaUsuarios {
         Usuario usuario = new Usuario("Pedro", "Montes", 
                 "prueba@correo.com", "cedula", "123", 1063158246);
         listUsuarios.add(usuario);
-        System.out.println(""+usuario.getCorreo());
     }
 
     public ArrayList<Usuario> getListUsuarios() {
