@@ -8,13 +8,13 @@ package modelos;
 public class Libro {
     private String nombre, editorial, formato, presentacion, autores, categoria;
     private long isbn;
-    private Double precio;
+    private double precio;
     private int stock;
 
     public Libro() {
     }
 
-    public Libro(String nombre, String editorial, String formato, String presentacion, String autores, String categoria, long isbn, Double precio, int stock) {
+    public Libro(String nombre, String editorial, String formato, String presentacion, String autores, String categoria, long isbn, double precio, int stock) {
         this.nombre = nombre;
         this.editorial = editorial;
         this.formato = formato;
@@ -90,11 +90,11 @@ public class Libro {
         this.isbn = isbn;
     }
 
-    public Double getPrecio() {
+    public double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(Double precio) {
+    public void setPrecio(double precio) {
         this.precio = precio;
     }
 
