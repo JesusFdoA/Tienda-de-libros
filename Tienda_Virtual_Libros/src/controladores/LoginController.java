@@ -77,7 +77,8 @@ public class LoginController implements Initializable {
     @FXML
     private void iniciarSesion(MouseEvent event) {
         String us = txtUsuario.getText(), pass = txtContra.getText();
-
+        
+        
         if (Utilidades.getInstance().getListaUsuarios().existeUsuario(us, pass)) {
             Platform.runLater(() -> {
                 Alert alert = new Alert(AlertType.INFORMATION);

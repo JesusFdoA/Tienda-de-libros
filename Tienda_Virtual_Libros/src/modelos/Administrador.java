@@ -9,12 +9,16 @@ public class Administrador {
     private String correo, contraseña;
 
     public Administrador() {
+        this.correo = "admin@correo";
+        this.contraseña = contraseña;
     }
 
     public Administrador(String correo, String contraseña) {
         this.correo = correo;
         this.contraseña = contraseña;
     }
+    
+    
 
     public String getCorreo() {
         return correo;
