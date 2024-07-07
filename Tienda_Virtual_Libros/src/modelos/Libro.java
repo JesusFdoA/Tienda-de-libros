@@ -6,15 +6,14 @@ package modelos;
 
 
 public class Libro {
-    private String nombre, editorial, formato, presentacion, autores, categoria;
-    private long isbn;
+    private String nombre, editorial, formato, presentacion, autores, categoria, isbn;
     private double precio;
     private int stock;
 
     public Libro() {
     }
 
-    public Libro(String nombre, String editorial, String formato, String presentacion, String autores, String categoria, long isbn, double precio, int stock) {
+    public Libro(String nombre, String editorial, String formato, String presentacion, String autores, String categoria, String isbn, double precio, int stock) {
         this.nombre = nombre;
         this.editorial = editorial;
         this.formato = formato;
@@ -25,6 +24,8 @@ public class Libro {
         this.precio = precio;
         this.stock = stock;
     }
+
+    
 
     public Libro(String nombre, String autores, double precio) {
         this.nombre = nombre;
@@ -78,14 +79,6 @@ public class Libro {
 
     public void setCategoria(String categoria) {
         this.categoria = categoria;
-    }
-
-    public long getIsbn() {
-        return isbn;
-    }
-
-    public void setIsbn(long isbn) {
-        this.isbn = isbn;
     }
 
     public double getPrecio() {
