@@ -53,7 +53,7 @@ public class MenuPrincipalController implements Initializable {
     @FXML
     private Pane panelCompras;
     //Configuracion de la tabla deseo
-    private List<Libro> libros = new ArrayList<>();
+    private ObservableList<Libro> listLibroDesos;
     @FXML
     private TableView<Libro> tableDeseo;
     @FXML
@@ -107,7 +107,7 @@ public class MenuPrincipalController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         CapturarUsuario();
-        actualizarGridPane();
+        // actualizarGridPane();
         ConfigurarTablaCarrito();
 
     }
@@ -118,6 +118,14 @@ public class MenuPrincipalController implements Initializable {
         txtApellidos.setText(usuarioLog.getApellidos());
         panelPrincipal.setHgap(10); // Espacio horizontal entre columnas
         panelPrincipal.setVgap(50); // Espacio vertical entre filas
+    }
+
+    public void configurarTablaDeseos() {
+        listLibroDesos = FXCollections.observableArrayList();
+
+        this.colNombreDeseo.setCellValueFactory(new PropertyValueFactory("nombre"));
+        this.colPrecioDeseo.setCellValueFactory(new PropertyValueFactory("precio"));
+        
     }
 
     public void ConfigurarTablaCarrito() {
@@ -137,53 +145,6 @@ public class MenuPrincipalController implements Initializable {
         s2.setStyle("-fx-text-fill: #c2c2d1;");
         s3.setStyle("-fx-text-fill: #c2c2d1;");
         s4.setStyle("-fx-text-fill: #c2c2d1;");
-    }
-
-    private List cargarLibrosIniciales() {
-        libros.clear();
-        libros.add(new Libro("Programacion 1", "Anonimo", 150000));
-        libros.add(new Libro("Programacion 2", "Anonimo", 200000));
-        libros.add(new Libro("Programacion 3", "Anonimo", 190000));
-        libros.add(new Libro("Programacion 4", "Anonimo", 190000));
-       
-        return libros;
-
-    }
-    
-
-    public void actualizarGridPane() {
-        List<Libro> libros = cargarLibrosIniciales();
-
-        panelPrincipal.getChildren().clear(); // Limpia el GridPane antes de agregar nuevos elementos
-
-        int column = 0;
-        int row = 0;
-
-        for (int i = 0; i < libros.size(); i++) {
-            try {
-                FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("/vistas/item_libro.fxml"));
-                HBox itemLibro = fxmlLoader.load();
-
-                Item_libroController itemLibroController = fxmlLoader.getController();
-                itemLibroController.setDatosLibro(libros.get(i)); // Asigna los datos del libro al controlador del item
-
-                panelPrincipal.add(itemLibro, column, row);
-
-                column++;
-                if (column == 2) {
-                    column = 0;
-                    row++;
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    public void agregarLibro(Libro libro) {
-        libros.add(libro);
-        actualizarGridPane();
     }
 
     @FXML
