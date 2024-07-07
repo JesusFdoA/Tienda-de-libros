@@ -28,11 +28,13 @@ public class Main extends Application {
             ListaUsuarios listaUsuarios = new ListaUsuarios();
             ListaDeDeseos listaDeDeseos = new ListaDeDeseos();
             Usuario usuario = new Usuario();
-            
+            Administrador administrador = new Administrador();
+
             Utilidades.getInstance().setUsuario(usuario);
+            Utilidades.getInstance().setAdministrador(administrador);
             Utilidades.getInstance().setListaUsuarios(listaUsuarios);
             Utilidades.getInstance().setListaDeDeseos(listaDeDeseos);
-            
+
             Parent root = FXMLLoader.load(getClass().getResource("/vistas/Login.fxml"));
             Scene scene = new Scene(root);
             stage.setScene(scene);

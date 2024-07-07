@@ -9,8 +9,8 @@ public class Administrador {
     private String correo, contraseña;
 
     public Administrador() {
-        this.correo = "admin@correo";
-        this.contraseña = contraseña;
+        this.correo = "admin@correo.com";
+        this.contraseña = "admin123";
     }
 
     public Administrador(String correo, String contraseña) {
