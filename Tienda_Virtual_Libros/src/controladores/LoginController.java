@@ -27,6 +27,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import modelos.Administrador;
 import modelos.Usuario;
 
 public class LoginController implements Initializable {
@@ -77,8 +78,13 @@ public class LoginController implements Initializable {
     @FXML
     private void iniciarSesion(MouseEvent event) {
         String us = txtUsuario.getText(), pass = txtContra.getText();
-        
-        
+        Administrador administrador = Utilidades.getInstance().getAdministrador();
+
+        if (administrador.getCorreo().equals(us) && administrador.getContraseña().equalsIgnoreCase(pass)) {
+            Utilidades.getInstance().mostrarOtraVista(event, "/vistas/VistaAdmin.fxml");
+             return;
+        }
+       
         if (Utilidades.getInstance().getListaUsuarios().existeUsuario(us, pass)) {
             Platform.runLater(() -> {
                 Alert alert = new Alert(AlertType.INFORMATION);
