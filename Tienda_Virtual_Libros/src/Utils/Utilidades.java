@@ -17,6 +17,7 @@ import javafx.stage.Stage;
 import modelos.Administrador;
 import modelos.Libro;
 import modelos.Usuario;
+import modelos.listas.ListaDeDeseos;
 import modelos.listas.ListaUsuarios;
 import modelos.pilas.PilaLibrosFisica;
 import modelos.pilas.PilaLibrosIngenieria;
@@ -30,9 +31,11 @@ public class Utilidades {
     private Usuario usuario;
     private Libro libro;
     private ListaUsuarios listaUsuarios;
+    private ListaDeDeseos listaDeDeseos;
     private PilaLibrosFisica pilaLibrosFisica;
     private PilaLibrosIngenieria pilaLibrosIngenieria;
     private PilaLibrosMatematica pilaLibrosMatematica;
+    
     
     private Utilidades() {
       
@@ -73,6 +76,14 @@ public class Utilidades {
 
     public Libro getLibro() {
         return libro;
+    }
+
+    public ListaDeDeseos getListaDeDeseos() {
+        return listaDeDeseos;
+    }
+
+    public void setListaDeDeseos(ListaDeDeseos listaDeDeseos) {
+        this.listaDeDeseos = listaDeDeseos;
     }
 
     public void setLibro(Libro libro) {
