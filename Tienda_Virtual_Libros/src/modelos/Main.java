@@ -17,6 +17,7 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import modelos.listas.ListaDeDeseos;
+import modelos.listas.ListaLibrosBiblioteca;
 import modelos.listas.ListaUsuarios;
 
 public class Main extends Application {
@@ -27,6 +28,7 @@ public class Main extends Application {
         try {
             ListaUsuarios listaUsuarios = new ListaUsuarios();
             ListaDeDeseos listaDeDeseos = new ListaDeDeseos();
+            ListaLibrosBiblioteca listaLibrosBiblioteca = new ListaLibrosBiblioteca();
             Usuario usuario = new Usuario();
             Administrador administrador = new Administrador();
 
@@ -34,6 +36,7 @@ public class Main extends Application {
             Utilidades.getInstance().setAdministrador(administrador);
             Utilidades.getInstance().setListaUsuarios(listaUsuarios);
             Utilidades.getInstance().setListaDeDeseos(listaDeDeseos);
+            Utilidades.getInstance().setListaLibrosBiblioteca(listaLibrosBiblioteca);
 
             Parent root = FXMLLoader.load(getClass().getResource("/vistas/Login.fxml"));
             Scene scene = new Scene(root);
