@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.effect.Light.Distant?>
@@ -167,6 +168,12 @@
                               <Insets bottom="15.0" />
                            </VBox.margin>
                         </HBox>
+                        <Label styleClass="labelsDetalles" stylesheets="@../Utils/EstilosMenuPrincipal.css" text="Cantidad a comprar:" />
+                        <Spinner fx:id="spingCant" prefHeight="26.0" prefWidth="251.0">
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </Spinner>
                         <HBox alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="26.0" prefWidth="323.0">
                            <children>
                               <Label text="Anadir al carrito:">
