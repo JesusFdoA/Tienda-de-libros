@@ -114,6 +114,7 @@ public class VistaAdminController implements Initializable {
                 libroSeleccionado.setStock(nuevoStock);
                 tableLibreria.refresh();
                 Utilidades.getInstance().mostrarAlert(Alert.AlertType.INFORMATION, "Actualización Exitosa", "El stock del libro ha sido actualizado correctamente.");
+            txtStock.setText("");
             } catch (NumberFormatException e) {
                 Utilidades.getInstance().mostrarAlert(Alert.AlertType.ERROR, "Error de Formato", "Por favor ingrese un número válido.");
             }
