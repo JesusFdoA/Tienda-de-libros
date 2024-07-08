@@ -7,8 +7,11 @@ package controladores;
 import Utils.Utilidades;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
@@ -16,6 +19,13 @@ import javafx.scene.control.Alert;
  * @author Juan Mangones
  */
 public class VistaAdminController implements Initializable {
+
+    @FXML
+    private TextField txtStock;
+    @FXML
+    private Button btnUpdate;
+    @FXML
+    private Button btnSalir;
 
     /**
      * Initializes the controller class.
