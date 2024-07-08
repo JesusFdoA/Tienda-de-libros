@@ -135,6 +135,26 @@ public class MenuPrincipalController implements Initializable {
     private Label txt1;
     @FXML
     private Pane vistaLateral;
+    @FXML
+    private ImageView img2;
+    @FXML
+    private Label txt2;
+    @FXML
+    private ImageView img3;
+    @FXML
+    private Label txt3;
+    @FXML
+    private ImageView img4;
+    @FXML
+    private Label txt4;
+    @FXML
+    private Label txtPrecioE;
+    @FXML
+    private Label txtPrecioM;
+    @FXML
+    private Label txtPrecioNum;
+    @FXML
+    private Label txtPrecioInge;
 
     /**
      * Initializes the controller class.
@@ -143,7 +163,7 @@ public class MenuPrincipalController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         this.usuario = Utilidades.getInstance().getUsuario();
-
+        cargarLibros();
         configurarTablaDeseos();
         configurarTablaCarrito();
         configurarTablaCompras();
@@ -161,6 +181,17 @@ public class MenuPrincipalController implements Initializable {
 
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
+    }
+
+    public void cargarLibros() {
+        txtPrecioE.setText(""+Utilidades.getInstance().
+                getListaLibrosBiblioteca().buscarPorISBN("9788419599339").getPrecio());
+        txtPrecioM.setText(""+Utilidades.getInstance().
+                getListaLibrosBiblioteca().buscarPorISBN("9786287667723").getPrecio());
+        txtPrecioNum.setText(""+Utilidades.getInstance().
+                getListaLibrosBiblioteca().buscarPorISBN("9789587788914").getPrecio());
+        txtPrecioInge.setText(""+Utilidades.getInstance().
+                getListaLibrosBiblioteca().buscarPorISBN("9789587788792").getPrecio());
     }
 
     public void CapturarUsuario() {
@@ -243,12 +274,11 @@ public class MenuPrincipalController implements Initializable {
             // Establecer los datos en la tabla
             tableCar.setItems(listaLibroCarrito);
         } catch (Exception e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText("Error al cargar la tabla");
-            alert.setContentText("Este es un cuadro de diálogo de alerta");
-
-            alert.showAndWait();
+//            Alert alert = new Alert(Alert.AlertType.ERROR);
+//            alert.setTitle("Error");
+//            alert.setHeaderText("Error al cargar la tabla");
+//            alert.setContentText("Este es un cuadro de diálogo de alerta");
+//            alert.showAndWait();
         }
     }
 
@@ -260,6 +290,7 @@ public class MenuPrincipalController implements Initializable {
         s2.setStyle("-fx-text-fill: #c2c2d1;");
         s3.setStyle("-fx-text-fill: #c2c2d1;");
         s4.setStyle("-fx-text-fill: #c2c2d1;");
+        vistaLateral.setVisible(false);
     }
 
     @FXML
@@ -297,6 +328,7 @@ public class MenuPrincipalController implements Initializable {
         panelCarrito.setVisible(false);
         panelPrincipal.setVisible(false);
         panelCompras.setVisible(true);
+
     }
 
     @FXML
@@ -305,7 +337,7 @@ public class MenuPrincipalController implements Initializable {
     }
 
     public void seleccionarLibro(String isbn) {
-        
+
         switch (isbn) {
             case "9788419599339":
                 cargarDetalles(Utilidades.getInstance()
@@ -313,13 +345,19 @@ public class MenuPrincipalController implements Initializable {
                         "/img/menuPrincipal/libros/egipto.png");
                 break;
             case "9786287667723":
-
+                cargarDetalles(Utilidades.getInstance()
+                        .getListaLibrosBiblioteca().buscarPorISBN(isbn),
+                        "/img/menuPrincipal/libros/manzana.png");
                 break;
             case "9789587788792":
-
+                cargarDetalles(Utilidades.getInstance()
+                        .getListaLibrosBiblioteca().buscarPorISBN(isbn),
+                        "/img/menuPrincipal/libros/intro_inge.png");
                 break;
             case "9789587788914":
-
+                cargarDetalles(Utilidades.getInstance()
+                        .getListaLibrosBiblioteca().buscarPorISBN(isbn),
+                        "/img/menuPrincipal/libros/metodos.png");
                 break;
             default:
                 Utilidades.getInstance().mostrarAlert(Alert.AlertType.ERROR, "Error", "No se encontro isbn");
@@ -342,5 +380,48 @@ public class MenuPrincipalController implements Initializable {
     @FXML
     private void clickEgito(MouseEvent event) {
         seleccionarLibro("9788419599339");
+    }
+
+    @FXML
+    private void clickText1(MouseEvent event) {
+        seleccionarLibro("9788419599339");
+    }
+
+    @FXML
+    private void clickImg2(MouseEvent event) {
+        seleccionarLibro("9786287667723");
+    }
+
+    @FXML
+    private void txtClick2(MouseEvent event) {
+        seleccionarLibro("9786287667723 ");
+    }
+
+    @FXML
+    private void clickimg3(MouseEvent event) {
+        seleccionarLibro("9789587788914");
+    }
+
+    @FXML
+    private void clickTxt3(MouseEvent event) {
+        seleccionarLibro("9789587788914");
+    }
+
+    @FXML
+    private void clickImg4(MouseEvent event) {
+        seleccionarLibro("9789587788792");
+    }
+
+    @FXML
+    private void clicktxt4(MouseEvent event) {
+        seleccionarLibro("9789587788792");
+    }
+
+    @FXML
+    private void anadirCarrito(MouseEvent event) {
+    }
+
+    @FXML
+    private void anadirDeseos(MouseEvent event) {
     }
 }
