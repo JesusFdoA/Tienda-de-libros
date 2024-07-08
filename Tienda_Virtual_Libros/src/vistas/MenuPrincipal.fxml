@@ -470,7 +470,7 @@
                                  </children>
                               </VBox>
                            </children></Pane>
-                        <Pane fx:id="panelCompras" layoutY="3.0" prefHeight="720.0" prefWidth="678.0">
+                        <Pane fx:id="panelCompras" layoutY="3.0" prefHeight="720.0" prefWidth="678.0" visible="false">
                            <children>
                               <VBox layoutX="6.0" layoutY="104.0" prefHeight="586.0" prefWidth="653.0">
                                  <children>
