@@ -128,7 +128,7 @@
             </Pane>
          </left>
          <right>
-            <Pane fx:id="vistaLateral" prefHeight="850.0" prefWidth="334.0" style="-fx-background-color: #f9f8fd; -fx-border-color: black;" visible="false" BorderPane.alignment="CENTER">
+            <Pane fx:id="vistaLateral" prefHeight="850.0" prefWidth="334.0" style="-fx-background-color: #f9f8fd; -fx-border-color: black;" BorderPane.alignment="CENTER">
                <children>
                   <ImageView fx:id="imgLibro" fitHeight="248.0" fitWidth="212.0" layoutX="86.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -190,12 +190,12 @@
                         </HBox>
                         <HBox alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="36.0" prefWidth="323.0">
                            <children>
-                              <Button fx:id="btnCarrito" mnemonicParsing="false" text="Carrito">
+                              <Button fx:id="btnCarrito" mnemonicParsing="false" onMouseClicked="#anadirCarrito" text="Carrito">
                                  <HBox.margin>
                                     <Insets right="80.0" />
                                  </HBox.margin>
                               </Button>
-                              <Button fx:id="btnDeseos" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Deseos">
+                              <Button fx:id="btnDeseos" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#anadirDeseos" text="Deseos">
                                  <HBox.margin>
                                     <Insets left="80.0" />
                                  </HBox.margin>
@@ -245,7 +245,7 @@
                                                    <font>
                                                       <Font size="18.0" />
                                                    </font></Label>
-                                                <Label layoutX="16.0" layoutY="53.0" prefHeight="31.0" prefWidth="130.0" text="JAVI MAGWELL" wrapText="true">
+                                                <Label layoutX="16.0" layoutY="53.0" prefHeight="31.0" prefWidth="130.0" text="IAN STEWART" wrapText="true">
                                                    <VBox.margin>
                                                       <Insets bottom="10.0" />
                                                    </VBox.margin>
@@ -260,7 +260,7 @@
                                                             <Font size="21.0" />
                                                          </font>
                                                       </Label>
-                                                      <Label layoutX="10.0" layoutY="10.0" text="100000" textAlignment="CENTER">
+                                                      <Label fx:id="txtPrecioE" layoutX="10.0" layoutY="10.0" text="100000" textAlignment="CENTER">
                                                          <font>
                                                             <Font name="System Bold" size="21.0" />
                                                          </font>
@@ -311,7 +311,7 @@
                                                             <Font size="21.0" />
                                                          </font>
                                                       </Label>
-                                                      <Label layoutX="10.0" layoutY="10.0" text="100000" textAlignment="CENTER">
+                                                      <Label fx:id="txtPrecioM" layoutX="10.0" layoutY="10.0" text="100000" textAlignment="CENTER">
                                                          <font>
                                                             <Font name="System Bold" size="21.0" />
                                                          </font>
@@ -360,7 +360,7 @@
                                                       <Font size="21.0" />
                                                    </font>
                                                 </Label>
-                                                <Label layoutX="10.0" layoutY="10.0" text="100000" textAlignment="CENTER">
+                                                <Label fx:id="txtPrecioNum" layoutX="10.0" layoutY="10.0" text="100000" textAlignment="CENTER">
                                                    <font>
                                                       <Font name="System Bold" size="21.0" />
                                                    </font>
@@ -408,7 +408,7 @@
                                                       <Font size="21.0" />
                                                    </font>
                                                 </Label>
-                                                <Label layoutX="10.0" layoutY="10.0" text="100000" textAlignment="CENTER">
+                                                <Label fx:id="txtPrecioInge" layoutX="10.0" layoutY="10.0" text="100000" textAlignment="CENTER">
                                                    <font>
                                                       <Font name="System Bold" size="21.0" />
                                                    </font>
