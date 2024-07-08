@@ -69,6 +69,14 @@ public class Utilidades {
         this.administrador = administrador;
     }
 
+    public ListaLibrosBiblioteca getListaLibrosBiblioteca() {
+        return listaLibrosBiblioteca;
+    }
+
+    public void setListaLibrosBiblioteca(ListaLibrosBiblioteca listaLibrosBiblioteca) {
+        this.listaLibrosBiblioteca = listaLibrosBiblioteca;
+    }
+
     public Usuario getUsuario() {
         return usuario;
     }
