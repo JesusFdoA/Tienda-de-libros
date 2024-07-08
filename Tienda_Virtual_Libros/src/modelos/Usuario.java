@@ -5,6 +5,7 @@
 package modelos;
 
 import modelos.listas.ListaDeCarrito;
+import modelos.listas.ListaDeCompras;
 import modelos.listas.ListaDeDeseos;
 
 public class Usuario {
@@ -14,6 +15,7 @@ public class Usuario {
     private Usuario nodoUsuario;
     private ListaDeDeseos listaDeDeseos;
     private ListaDeCarrito listaDeCarrito;
+    private ListaDeCompras listaDeCompras;
 
     public Usuario() {
     }
@@ -38,6 +40,14 @@ public class Usuario {
         this.pass = contraseña;
         this.numero_Documento = numero_Documento;
         nodoUsuario = null;
+    }
+
+    public ListaDeCompras getListaDeCompras() {
+        return listaDeCompras;
+    }
+
+    public void setListaDeCompras(ListaDeCompras listaDeCompras) {
+        this.listaDeCompras = listaDeCompras;
     }
 
     public ListaDeDeseos getListaDeDeseos() {
