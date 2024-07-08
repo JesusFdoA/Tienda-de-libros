@@ -128,7 +128,7 @@
             </Pane>
          </left>
          <right>
-            <Pane fx:id="vistaLateral" prefHeight="850.0" prefWidth="334.0" style="-fx-background-color: #f9f8fd; -fx-border-color: black;" BorderPane.alignment="CENTER">
+            <Pane fx:id="vistaLateral" prefHeight="850.0" prefWidth="334.0" style="-fx-background-color: #f9f8fd; -fx-border-color: black;" visible="false" BorderPane.alignment="CENTER">
                <children>
                   <ImageView fx:id="imgLibro" fitHeight="248.0" fitWidth="212.0" layoutX="86.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -211,7 +211,7 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="847.0" prefWidth="678.0">
                      <children>
-                        <GridPane fx:id="panelPrincipal" gridLinesVisible="true" prefHeight="850.0" prefWidth="676.0">
+                        <GridPane fx:id="panelPrincipal" gridLinesVisible="true" prefHeight="850.0" prefWidth="676.0" visible="false">
                           <columnConstraints>
                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -437,7 +437,7 @@
                                  </children>
                               </VBox>
                            </children></Pane>
-                        <Pane fx:id="panelCarrito" layoutX="-6.0" layoutY="4.0" prefHeight="710.0" prefWidth="679.0" visible="false">
+                        <Pane fx:id="panelCarrito" layoutX="-6.0" layoutY="4.0" prefHeight="710.0" prefWidth="679.0">
                            <children>
                               <VBox layoutX="32.0" layoutY="116.0" prefHeight="479.0" prefWidth="615.0">
                                  <children>
@@ -452,12 +452,12 @@
                                     </TableView>
                                     <HBox alignment="CENTER" prefHeight="100.0" prefWidth="615.0">
                                        <children>
-                                          <Button fx:id="btnBuyCar" mnemonicParsing="false" text="Continuar Compra">
+                                          <Button fx:id="btnBuyCar" mnemonicParsing="false" onMouseClicked="#terminarCompra" text="Continuar Compra">
                                              <HBox.margin>
                                                 <Insets right="100.0" />
                                              </HBox.margin>
                                           </Button>
-                                          <Button fx:id="BTNDelCar" mnemonicParsing="false" text="Eliminar">
+                                          <Button fx:id="BTNDelCar" mnemonicParsing="false" onMouseClicked="#eliminarCarrito" text="Eliminar">
                                              <HBox.margin>
                                                 <Insets left="100.0" />
                                              </HBox.margin>
@@ -507,18 +507,6 @@
                                        <opaqueInsets>
                                           <Insets />
                                        </opaqueInsets>
-                                       <children>
-                                          <Button fx:id="btnPagar" mnemonicParsing="false" style="-fx-background-color: #30b956;" text="Pagar" textFill="#fcfafa">
-                                             <HBox.margin>
-                                                <Insets right="200.0" />
-                                             </HBox.margin>
-                                          </Button>
-                                          <Button fx:id="btnCancelar" mnemonicParsing="false" style="-fx-background-color: #EF4B4B;" text="Cancelar Compra" textFill="#faf9f9">
-                                             <HBox.margin>
-                                                <Insets left="200.0" />
-                                             </HBox.margin>
-                                          </Button>
-                                       </children>
                                     </HBox>
                                  </children>
                               </VBox>

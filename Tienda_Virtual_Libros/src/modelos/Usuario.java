@@ -18,6 +18,7 @@ public class Usuario {
     private ListaDeCompras listaDeCompras;
 
     public Usuario() {
+        
     }
 
     public Usuario(String nombres, String apellidos, String correo, String tipo_Documento, String pass, long numero_Documento, Usuario nodoUsuario, ListaDeDeseos listaDeDeseos, ListaDeCarrito listaDeCarrito) {
@@ -39,7 +40,9 @@ public class Usuario {
         this.tipo_Documento = tipo_Documento;
         this.pass = contraseña;
         this.numero_Documento = numero_Documento;
-        nodoUsuario = null;
+        listaDeCarrito = new ListaDeCarrito();
+        listaDeCompras = new ListaDeCompras();
+        listaDeDeseos = new ListaDeDeseos();
     }
 
     public ListaDeCompras getListaDeCompras() {
