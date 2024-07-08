@@ -19,9 +19,11 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Spinner;
+import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
@@ -126,7 +128,13 @@ public class MenuPrincipalController implements Initializable {
     @FXML
     private Button btnDeseos;
     @FXML
-    private Spinner<?> spingCant;
+    private Spinner<Integer> spingCant;
+    @FXML
+    private ImageView img1;
+    @FXML
+    private Label txt1;
+    @FXML
+    private Pane vistaLateral;
 
     /**
      * Initializes the controller class.
@@ -140,6 +148,11 @@ public class MenuPrincipalController implements Initializable {
         configurarTablaCarrito();
         configurarTablaCompras();
 
+    }
+
+    public void cargarSpinner(int rango1, int rango2, int cambios) {
+        SpinnerValueFactory<Integer> valueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(rango1, rango2, cambios);
+        spingCant.setValueFactory(valueFactory);
     }
 
     public Usuario getUsuario() {
@@ -289,5 +302,45 @@ public class MenuPrincipalController implements Initializable {
     @FXML
     private void regresar(MouseEvent event) {
         Utilidades.getInstance().mostrarOtraVista(event, "/vistas/Login.fxml");
+    }
+
+    public void seleccionarLibro(String isbn) {
+        
+        switch (isbn) {
+            case "9788419599339":
+                cargarDetalles(Utilidades.getInstance()
+                        .getListaLibrosBiblioteca().buscarPorISBN(isbn),
+                        "/img/menuPrincipal/libros/egipto.png");
+                break;
+            case "9786287667723":
+
+                break;
+            case "9789587788792":
+
+                break;
+            case "9789587788914":
+
+                break;
+            default:
+                Utilidades.getInstance().mostrarAlert(Alert.AlertType.ERROR, "Error", "No se encontro isbn");
+        }
+    }
+
+    public void cargarDetalles(Libro libro, String ruta) {
+        vistaLateral.setVisible(true);
+        Image imagenInicial = new Image(ruta);
+        imgLibro.setImage(imagenInicial);
+        txtNombre.setText(libro.getNombre());
+        txtEditorial.setText(libro.getEditorial());
+        txtPresentacion.setText(libro.getPresentacion());
+        txtIsbn.setText(libro.getIsbn());
+        txtCategoria.setText(libro.getCategoria());
+        txtStock.setText("" + libro.getStock());
+        cargarSpinner(0, libro.getStock(), 1);
+    }
+
+    @FXML
+    private void clickEgito(MouseEvent event) {
+        seleccionarLibro("9788419599339");
     }
 }
