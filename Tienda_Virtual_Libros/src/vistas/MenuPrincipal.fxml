@@ -437,7 +437,7 @@
                                  </children>
                               </VBox>
                            </children></Pane>
-                        <Pane fx:id="panelCarrito" layoutX="-6.0" layoutY="4.0" prefHeight="710.0" prefWidth="679.0">
+                        <Pane fx:id="panelCarrito" layoutX="-6.0" layoutY="4.0" prefHeight="710.0" prefWidth="679.0" visible="false">
                            <children>
                               <VBox layoutX="32.0" layoutY="116.0" prefHeight="479.0" prefWidth="615.0">
                                  <children>
@@ -470,7 +470,7 @@
                                  </children>
                               </VBox>
                            </children></Pane>
-                        <Pane fx:id="panelCompras" layoutY="3.0" prefHeight="720.0" prefWidth="678.0" visible="false">
+                        <Pane fx:id="panelCompras" layoutY="3.0" prefHeight="720.0" prefWidth="678.0">
                            <children>
                               <VBox layoutX="6.0" layoutY="104.0" prefHeight="586.0" prefWidth="653.0">
                                  <children>
