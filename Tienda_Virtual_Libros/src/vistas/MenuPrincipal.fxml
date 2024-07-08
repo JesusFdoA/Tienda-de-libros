@@ -128,7 +128,7 @@
             </Pane>
          </left>
          <right>
-            <Pane fx:id="vistaLateral" prefHeight="850.0" prefWidth="334.0" style="-fx-background-color: #f9f8fd; -fx-border-color: black;" BorderPane.alignment="CENTER">
+            <Pane fx:id="vistaLateral" prefHeight="850.0" prefWidth="334.0" style="-fx-background-color: #f9f8fd; -fx-border-color: black;" visible="false" BorderPane.alignment="CENTER">
                <children>
                   <ImageView fx:id="imgLibro" fitHeight="248.0" fitWidth="212.0" layoutX="86.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -226,7 +226,7 @@
                                  <children>
                                     <Pane layoutX="13.0" layoutY="9.0" prefHeight="420.0" prefWidth="300.0" style="-fx-background-color: white; -fx-border-color: black;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
                                        <children>
-                                          <ImageView fx:id="img1" fitHeight="287.0" fitWidth="145.0" layoutX="14.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="img1" fitHeight="287.0" fitWidth="145.0" layoutX="14.0" layoutY="88.0" onMouseClicked="#clickEgito" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../img/menuPrincipal/libros/egipto.png" />
                                              </image>
