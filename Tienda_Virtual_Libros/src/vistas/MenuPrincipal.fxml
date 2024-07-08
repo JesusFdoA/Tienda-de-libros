@@ -276,14 +276,14 @@
                                  <children>
                                     <Pane layoutX="19.0" layoutY="13.0" prefHeight="420.0" prefWidth="300.0" style="-fx-background-color: white; -fx-border-color: black;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
                                        <children>
-                                          <ImageView fitHeight="287.0" fitWidth="145.0" layoutX="14.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="img2" fitHeight="287.0" fitWidth="145.0" layoutX="14.0" layoutY="88.0" onMouseClicked="#clickImg2" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../img/menuPrincipal/libros/manzana.png" />
                                              </image>
                                           </ImageView>
                                           <VBox alignment="TOP_CENTER" layoutX="165.0" layoutY="89.0" prefHeight="250.0" prefWidth="144.0">
                                              <children>
-                                                <Label prefHeight="77.0" prefWidth="130.0" text="EVA MORDIO LA MANZANA" textAlignment="CENTER" wrapText="true">
+                                                <Label fx:id="txt2" onMouseClicked="#txtClick2" prefHeight="77.0" prefWidth="130.0" text="EVA MORDIO LA MANZANA" textAlignment="CENTER" wrapText="true">
                                                    <VBox.margin>
                                                       <Insets bottom="5.0" />
                                                    </VBox.margin>
@@ -325,14 +325,14 @@
                                  </children></AnchorPane>
                               <Pane prefHeight="420.0" prefWidth="300.0" style="-fx-background-color: white; -fx-border-color: black;" GridPane.rowIndex="1">
                                  <children>
-                                    <ImageView fitHeight="287.0" fitWidth="145.0" layoutX="14.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="img3" fitHeight="287.0" fitWidth="145.0" layoutX="14.0" layoutY="88.0" onMouseClicked="#clickimg3" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../img/menuPrincipal/libros/metodos.png" />
                                        </image>
                                     </ImageView>
                                     <VBox alignment="TOP_CENTER" layoutX="165.0" layoutY="89.0" prefHeight="250.0" prefWidth="144.0">
                                        <children>
-                                          <Label prefHeight="77.0" prefWidth="130.0" text="MÉTODOS NUMÉRICOS PARA INGENIERÍA" textAlignment="CENTER" wrapText="true">
+                                          <Label fx:id="txt3" onMouseClicked="#clickTxt3" prefHeight="77.0" prefWidth="130.0" text="MÉTODOS NUMÉRICOS PARA INGENIERÍA" textAlignment="CENTER" wrapText="true">
                                              <VBox.margin>
                                                 <Insets bottom="5.0" />
                                              </VBox.margin>
@@ -373,14 +373,14 @@
                               </Pane>
                               <Pane layoutX="10.0" layoutY="456.0" prefHeight="420.0" prefWidth="300.0" style="-fx-background-color: white; -fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                  <children>
-                                    <ImageView fitHeight="287.0" fitWidth="145.0" layoutX="14.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="img4" fitHeight="287.0" fitWidth="145.0" layoutX="14.0" layoutY="88.0" onMouseClicked="#clickImg4" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../img/menuPrincipal/libros/intro_inge.png" />
                                        </image>
                                     </ImageView>
                                     <VBox alignment="TOP_CENTER" layoutX="165.0" layoutY="89.0" prefHeight="250.0" prefWidth="144.0">
                                        <children>
-                                          <Label prefHeight="77.0" prefWidth="130.0" text="INTRODUCCIÓN A LA INGENIERÍA ESPACIAL" textAlignment="CENTER" wrapText="true">
+                                          <Label fx:id="txt4" onMouseClicked="#clicktxt4" prefHeight="77.0" prefWidth="130.0" text="INTRODUCCIÓN A LA INGENIERÍA ESPACIAL" textAlignment="CENTER" wrapText="true">
                                              <VBox.margin>
                                                 <Insets bottom="5.0" />
                                              </VBox.margin>
